@@ -18,8 +18,8 @@ adminRoute.post("/addjob",async(req,res)=>{
      await newJob.save()
      res.send(newJob) 
   }
-  catch{
-     res.send("err")
+  catch(err){
+     res.send(err)
   }
 })
 adminRoute.patch("/edit/:id",async(req,res)=>{
