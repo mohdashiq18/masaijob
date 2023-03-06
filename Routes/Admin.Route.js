@@ -12,15 +12,15 @@ adminRoute.get("/jobs",async(req,res)=>{
     }
 })
 adminRoute.post("/addjob",async(req,res)=>{
-    let payoad=req.body
-    try{
-       let newJob = new AdminModule(payoad)
-       await newJob.save()
-       res.send(newJob) 
-    }
-    catch{
-       res.send("err")
-    }
+  let payoad=req.body
+  try{
+     let newJob = new AdminModule(payoad)
+     await newJob.save()
+     res.send(newJob) 
+  }
+  catch{
+     res.send("err")
+  }
 })
 adminRoute.patch("/edit/:id",async(req,res)=>{
     let payload=req.body
